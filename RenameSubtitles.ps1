@@ -1,21 +1,25 @@
 #Rename all subtitle file name to match video files name
 param(
-    [string]$path
+    [string]$Path
 )
 
 $lastLocation = Get-Location
 
-if (Test-Path $path) {
-    Set-Location $path
+if (([string]::IsNullOrEmpty($Path)) -or !(Test-Path $Path)) {
+    Write-Error 'Path passed as parameter is not valid'
+    return
 }
+     
+
+Set-Location $Path
 
 $regex = 's\d\de\d\d'
 
 $subtitleExtensionArray = '.srt', '.sub', '.sbv'
 $videoExtensionArray = '.avi', '.mkv', '.mp4', '.flv', '.swf', '.mov', '.wmv'
 
-$allSubtitleFiles = get-childitem 'D:\Bojack Horseman Season 1 Webrip XviD' | Where-Object {$subtitleExtensionArray.Contains($_.extension)}
-$allVideoFiles = get-childitem 'D:\Bojack Horseman Season 1 Webrip XviD' | Where-Object {$videoExtensionArray.Contains($_.extension)}
+$allSubtitleFiles = get-childitem $Path | Where-Object {$subtitleExtensionArray.Contains($_.extension)}
+$allVideoFiles = get-childitem $Path | Where-Object {$videoExtensionArray.Contains($_.extension)}
 
 
 
