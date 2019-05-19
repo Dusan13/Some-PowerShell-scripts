@@ -32,7 +32,7 @@ Write-Host 'CHECKING INTERNET ACCESS'
         if (Test-Connection -computer $site -Quiet) { break OuterLoop }
     }
     Clear-Host
-    Write-Error 'INTERNET ACCESS IS NOT AVAILABLE'
+    Write-Host 'INTERNET ACCESS IS NOT AVAILABLE'
 }
 
 Clear-Host
