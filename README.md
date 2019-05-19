@@ -4,6 +4,7 @@ Rename all files with subtitle extension **(.srt, .sub, .sbv)** to name of file 
 based on **S\d\dE\d\d** mark (e.g. S01E03).
 
 ### Example
+
 OLD FOLDER | NEW FOLDER
 ----|----
 _GameOfThronesS01E01.avi|_GameOfThronesS01E01.avi
@@ -12,3 +13,7 @@ _GameOfThronesS01E03.avi|_GameOfThronesS01E03.avi
 _Game-Of-Thrones.BLU-RAY.S01E01.srt|_GameOfThronesS01E01.srt
 _Game-Of-Thrones.BLU-RAY.S01E02.srt|_GameOfThronesS01E02.srt
 _Game-Of-Thrones.BLU-RAY.S01E03.srt|_GameOfThronesS01E03.srt
+
+### Usage
+
+Execute ps1 script with parameter -Path set to Absolute/Relative path, or move script to folder where TV Show files are and execute script without parameters
